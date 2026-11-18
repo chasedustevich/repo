@@ -1,6 +1,6 @@
 # AGENTS.md — Chase's Repo
 
-This repository is a static **iOS jailbreak APT repository** served via GitHub Pages at `https://chasedustevich.github.io/repo/` (`https://github.com/chasedustevich/repo.git`). Originally initialized from the Reposi3 template, it has been streamlined and optimized to host **iOS 15–16+ rootless** (`iphoneos-arm64`) packages built with Theos in the sibling workspaces (`Asteroid`, `Snoverlay-2`, `axon-ios16-compatibility`, `s8edge`) for **Dopamine** and **Palera1n**, with full support for **Sileo**, **Zebra**, **Installer**, and legacy APT clients.
+This repository is a static **iOS jailbreak APT repository** served via GitHub Pages at `https://chasedustevich.github.io/repo/` (`https://github.com/chasedustevich/repo.git`). Originally initialized from [supermamon/Reposi3](https://github.com/supermamon/Reposi3) by Raymond Velasquez, it has been streamlined and optimized to host **iOS 15–16+ rootless** (`iphoneos-arm64`) packages built with Theos in the sibling workspaces (`Asteroid`, `Snoverlay-2`, `axon-ios16-compatibility`, `s8edge`) for **Dopamine** and **Palera1n**, with full support for **Sileo**, **Zebra**, **Installer**, and legacy APT clients.
 
 - Repository URL: `https://chasedustevich.github.io/repo/`
 - Target Scheme: **rootless (`iphoneos-arm64`)** for iOS 15.0+ (with `Architectures: iphoneos-arm iphoneos-arm64` declared in `Release` for broad APT client compatibility).
@@ -25,7 +25,7 @@ This repository is a static **iOS jailbreak APT repository** served via GitHub P
 | `repo.xml` | Shared footer links (`GitHub (@chasedustevich)`, `Repository Source`) injected at the bottom of web depiction pages. |
 | `CydiaIcon.png` | Repository icon referenced by `index.html` and APT repository metadata. |
 | `README.md` | User-facing repo guide and maintainer update workflow. |
-| `LICENSE` | Repository license (MIT from original template). |
+| `LICENSE` | MIT License (retaining original Reposi3 copyright notice for Raymond Velasquez / `supermamon`). |
 
 ## How it works
 

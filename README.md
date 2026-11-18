@@ -34,3 +34,9 @@ Or pull the latest release `iphoneos-arm64` `.deb` builds automatically from the
 ```
 
 Then commit and push to GitHub Pages.
+
+## Credits & License
+
+- Maintained and updated by **Chase Dustevich** with assistance from **Antigravity** (Google DeepMind).
+- Repository template originally created by **Raymond Velasquez** ([supermamon/Reposi3](https://github.com/supermamon/Reposi3)).
+- Licensed under the [MIT License](LICENSE).
