@@ -1,0 +1,8 @@
+<changelog>
+	<changes>
+		<version>1.1.1</version>
+		<change>Modernized for iOS 15-16+ rootless jailbreaks (iphoneos-arm64)</change>
+		<change>Attached overlay window to SBWindowScene for iOS 16+ compatibility</change>
+		<change>Added instant preference updates via Darwin notifications and rootless asset loading</change>
+	</changes>
+</changelog>

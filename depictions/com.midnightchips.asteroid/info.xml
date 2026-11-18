@@ -1,0 +1,35 @@
+<package>
+	<id>com.midnightchips.asteroid</id>
+	<name>Asteroid</name>
+	<version>4.0.0</version>
+	<compatibility>
+		<firmware>
+			<miniOS>15.0</miniOS>
+		</firmware>
+	</compatibility>
+	<dependencies>
+		<package>mobilesubstrate</package>
+		<package>preferenceloader</package>
+		<package>firmware (&gt;= 15.0)</package>
+	</dependencies>
+	<shortDescription>System-Wide Weather (Modernized for iOS 15 &amp; 16 rootless).</shortDescription>
+	<descriptionlist>
+		<description>System-wide live weather for iOS 15-16+ rootless jailbreaks (Dopamine &amp; Palera1n).</description>
+		<description>Animated live weather backgrounds on the Home Screen and Lock Screen using Apple's native WeatherUI .caml Mica animations and sky gradients.</description>
+		<description>Interactive modular Lock Screen weather components with drag-and-drop wiggle edit mode, greeting text, temperature, condition glyph, and native forecast platter.</description>
+		<description>Live updating Weather app icon, status bar weather glyph and temperature replacement, and default fallback city selection inside the Weather app.</description>
+	</descriptionlist>
+	<screenshots></screenshots>
+	<changelog>
+		<change>Modernized for iOS 15-16+ rootless jailbreaks (iphoneos-arm64)</change>
+		<change>Native WeatherUI .caml Mica animated weather backgrounds</change>
+		<change>Updated CoverSheet Lock Screen hooks, safe introspection, and CFPreferences IPC</change>
+	</changelog>
+	<links>
+		<link>
+			<name>Source Code on GitHub</name>
+			<url>https://github.com/chasedustevich/Asteroid</url>
+			<iconclass>fa fa-github</iconclass>
+		</link>
+	</links>
+</package>

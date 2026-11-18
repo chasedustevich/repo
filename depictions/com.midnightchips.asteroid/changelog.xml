@@ -1,0 +1,8 @@
+<changelog>
+	<changes>
+		<version>4.0.0</version>
+		<change>Modernized for iOS 15-16+ rootless jailbreaks (iphoneos-arm64)</change>
+		<change>Added native WeatherUI .caml Mica animations via ASTWeatherConditionBackgroundView</change>
+		<change>Updated Lock Screen CoverSheet hooks, status bar hooks, and CFPreferences/LWPProvider IPC</change>
+	</changes>
+</changelog>

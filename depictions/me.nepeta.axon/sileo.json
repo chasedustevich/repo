@@ -1,0 +1,73 @@
+{
+  "class": "DepictionTabView",
+  "minVersion": "0.1",
+  "tintColor": "#5856D6",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "Axon",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Priority Hub-style grouped notifications for **iOS 15–16+ rootless** jailbreaks (Dopamine & Palera1n).\n\n### Features & Fixes\n- **Grouped Notification Icons:** Organizes Lock Screen and Notification Center alerts by application with customizable visual styles and badge counters.\n- **Stuck Notification Fix:** Properly resolves `sectionIdentifier` on remote/app dismissals, removes zombie resurrection on wake/sleep, and synchronizes SpringBoard's notification list on clear.\n- **Dynamic Alignment Fix:** Correctly recalculates `UICollectionViewFlowLayout` section insets in `-layoutSubviews` for Left, Center, and Right alignment."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Information",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "1.5.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "iOS 15.0+ (Rootless)"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Architecture",
+          "text": "iphoneos-arm64"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Author",
+          "text": "Nepeta & Baw Appie (Modernized by Chase Dustevich)"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "View Source Code on GitHub",
+          "action": "https://github.com/chasedustevich/axon-ios16-compatibility"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "Changelog",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "1.5.1",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Fixed Left, Center, and Right alignment calculations and layout invalidation on resize (`AXNView`).\n- Fixed stuck notifications across iOS 15–16 (`sectionIdentifier` handling, `masterList` synchronization, and `NCNotificationStructuredListViewController` clear hooks).\n- Switched to standard Theos rootless (`iphoneos-arm64`)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "class": "DepictionTabView",
+  "minVersion": "0.1",
+  "tintColor": "#5AC8FA",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "Snoverlay 2",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Falling snowflakes across iOS for **iOS 15–16+ rootless** jailbreaks (Dopamine & Palera1n).\n\n### Features\n- **Wallpaper or System-Wide:** Restrict snow to the Home/Lock Screen wallpaper (`SBFStaticWallpaperView`) and CarPlay, or float snowflakes across every app via a touch-passthrough overlay window.\n- **iOS 16+ Scene Support:** Properly attaches `SnoverlaySecureWindow` to the active `SBWindowScene`.\n- **Two Rendering Engines:** Choose between the battery-friendly `CAEmitterLayer` particle engine or High Quality 3D `CABasicAnimation` mode, with white or blue snowflakes.\n- **Live Updates:** Settings changes apply immediately via Darwin notifications with no respring needed."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Information",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "1.1.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "iOS 15.0+ (Rootless)"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Architecture",
+          "text": "iphoneos-arm64"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Author",
+          "text": "Ryan Nair (Modernized by Chase Dustevich)"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "View Source Code on GitHub",
+          "action": "https://github.com/chasedustevich/Snoverlay-2"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "Changelog",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "1.1.1",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Modernized for iOS 15–16+ rootless jailbreaks (`iphoneos-arm64`).\n- Attached `SnoverlaySecureWindow` to `SBWindowScene` for iOS 16+ compatibility with full touch passthrough.\n- Enabled live preference updates via Darwin notifications and rootless asset resolution."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+<package>
+	<id>me.nepeta.axon</id>
+	<name>Axon</name>
+	<version>1.5.1</version>
+	<compatibility>
+		<firmware>
+			<miniOS>15.0</miniOS>
+		</firmware>
+	</compatibility>
+	<dependencies>
+		<package>mobilesubstrate</package>
+		<package>preferenceloader</package>
+		<package>firmware (&gt;= 15.0)</package>
+	</dependencies>
+	<shortDescription>Priority Hub for iOS 15-16+ (rootless)</shortDescription>
+	<descriptionlist>
+		<description>Groups Lock Screen and Notification Center notifications by app in a clean Priority Hub-style icon bar.</description>
+		<description>Modernized for iOS 15-16+ rootless jailbreaks (Dopamine &amp; Palera1n) using standard Theos rootless paths.</description>
+		<description>Fixes stuck zombie notifications on iOS 15-16 by syncing SpringBoard's NCNotificationMasterList and handling remote/app dismissals properly.</description>
+		<description>Fixes dynamic Left, Center, and Right alignment calculations on layout resize.</description>
+	</descriptionlist>
+	<screenshots></screenshots>
+	<changelog>
+		<change>Modernized for iOS 15-16+ rootless (iphoneos-arm64)</change>
+		<change>Fixed stuck notifications and synced clear-all hooks on NCNotificationStructuredListViewController</change>
+		<change>Fixed dynamic Left/Center/Right layout alignment and section inset recalculation</change>
+	</changelog>
+	<links>
+		<link>
+			<name>Source Code on GitHub</name>
+			<url>https://github.com/chasedustevich/axon-ios16-compatibility</url>
+			<iconclass>fa fa-github</iconclass>
+		</link>
+	</links>
+</package>

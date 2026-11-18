@@ -1,0 +1,73 @@
+{
+  "class": "DepictionTabView",
+  "minVersion": "0.1",
+  "tintColor": "#0A84FF",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "Asteroid",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "System-wide live weather for **iOS 15–16+ rootless** jailbreaks (Dopamine & Palera1n).\n\n### Features\n- **Animated Weather Wallpapers:** Live weather animations on the Home Screen and Lock Screen powered by Apple's native WeatherUI `.caml` Mica assets and sky gradients.\n- **Modular Lock Screen Widgets:** Interactive temperature, condition glyph, greeting, description, and forecast platter with drag-and-drop wiggle edit mode.\n- **Live Weather App Icon:** Real-time weather glyph, temperature, and live sky gradient directly on the Weather app icon.\n- **Status Bar & Default City:** Inline weather glyph/temperature in the status bar and default fallback city selection inside the native Weather app."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Information",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "4.0.0"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "iOS 15.0+ (Rootless)"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Architecture",
+          "text": "iphoneos-arm64"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Author",
+          "text": "MidnightChips & the casle (Modernized by Chase Dustevich)"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "View Source Code on GitHub",
+          "action": "https://github.com/chasedustevich/Asteroid"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "Changelog",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "4.0.0",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Modernized for iOS 15–16+ rootless jailbreaks (`iphoneos-arm64`).\n- Added native WeatherUI `.caml` Mica animations via `ASTWeatherConditionBackgroundView`.\n- Updated CoverSheet Lock Screen hooks, status bar integration, safe introspection, and `CFPreferences` cross-process weather sharing."
+        }
+      ]
+    }
+  ]
+}
