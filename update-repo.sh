@@ -273,6 +273,8 @@ for stanza in stanzas_raw:
         dep_dir = os.path.join(repo_dir, "depictions", pkg)
         info_xml = os.path.join(dep_dir, "info.xml")
         sileo_json = os.path.join(dep_dir, "sileo.json")
+        pkg_icon = os.path.join(dep_dir, "icon.png")
+        pkg_banner = os.path.join(dep_dir, "banner.png")
 
         if os.path.isfile(info_xml) and not fields.get("Depiction"):
             lines = update_stanza_field(
@@ -290,11 +292,19 @@ for stanza in stanzas_raw:
                 replace_if_present=False,
             )
 
-        if os.path.isfile(os.path.join(repo_dir, "CydiaIcon.png")) and not fields.get("Icon"):
+        if os.path.isfile(pkg_icon) and not fields.get("Icon"):
             lines = update_stanza_field(
                 lines,
                 "Icon",
-                f"{base_url}/CydiaIcon.png",
+                f"{base_url}/depictions/{pkg}/icon.png",
+                replace_if_present=False,
+            )
+
+        if os.path.isfile(pkg_banner) and not fields.get("Header"):
+            lines = update_stanza_field(
+                lines,
+                "Header",
+                f"{base_url}/depictions/{pkg}/banner.png",
                 replace_if_present=False,
             )
 
@@ -339,10 +349,16 @@ for pkg, ver in latest_versions.items():
             print(f"[depiction] Updated {pkg}/changelog.xml version -> {ver}")
 
     sileo_json = os.path.join(dep_dir, "sileo.json")
+    pkg_banner = os.path.join(dep_dir, "banner.png")
     if os.path.isfile(sileo_json):
         with open(sileo_json, "r", encoding="utf-8") as f:
             data = json.load(f)
         changed = False
+        if os.path.isfile(pkg_banner):
+            banner_url = f"{base_url}/depictions/{pkg}/banner.png"
+            if data.get("headerImage") != banner_url:
+                data["headerImage"] = banner_url
+                changed = True
         for tab in data.get("tabs", []):
             is_changelog_tab = tab.get("tabname") == "Changelog"
             updated_changelog_header = False
@@ -364,7 +380,7 @@ for pkg, ver in latest_versions.items():
             with open(sileo_json, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2)
                 f.write("\n")
-            print(f"[depiction] Updated {pkg}/sileo.json version -> {ver}")
+            print(f"[depiction] Updated {pkg}/sileo.json -> {ver}")
 PYEOF
 
 mv Packages.tmp Packages

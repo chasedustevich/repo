@@ -1,7 +1,8 @@
 {
   "class": "DepictionTabView",
-  "minVersion": "0.1",
+  "minVersion": "0.4",
   "tintColor": "#34C759",
+  "headerImage": "https://chasedustevich.github.io/repo/depictions/com.brunonfl.s8edge/banner.png",
   "tabs": [
     {
       "class": "DepictionStackView",

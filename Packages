@@ -15,7 +15,8 @@ Author: Bruno Andrade <brubiluco@globo.com>
 Name: S8Edge
 Depiction: https://chasedustevich.github.io/repo/depictions/?p=com.brunonfl.s8edge
 SileoDepiction: https://chasedustevich.github.io/repo/depictions/com.brunonfl.s8edge/sileo.json
-Icon: https://chasedustevich.github.io/repo/CydiaIcon.png
+Icon: https://chasedustevich.github.io/repo/depictions/com.brunonfl.s8edge/icon.png
+Header: https://chasedustevich.github.io/repo/depictions/com.brunonfl.s8edge/banner.png
 
 Package: com.midnightchips.asteroid
 Version: 4.0.0
@@ -35,7 +36,8 @@ Author: midnightchips & the casle
 Name: Asteroid
 Depiction: https://chasedustevich.github.io/repo/depictions/?p=com.midnightchips.asteroid
 SileoDepiction: https://chasedustevich.github.io/repo/depictions/com.midnightchips.asteroid/sileo.json
-Icon: https://chasedustevich.github.io/repo/CydiaIcon.png
+Icon: https://chasedustevich.github.io/repo/depictions/com.midnightchips.asteroid/icon.png
+Header: https://chasedustevich.github.io/repo/depictions/com.midnightchips.asteroid/banner.png
 
 Package: com.ryannair05.snoverlay
 Version: 1.1.0
@@ -56,7 +58,8 @@ Author: Ryan Nair
 Name: Snoverlay 2
 Depiction: https://chasedustevich.github.io/repo/depictions/?p=com.ryannair05.snoverlay
 SileoDepiction: https://chasedustevich.github.io/repo/depictions/com.ryannair05.snoverlay/sileo.json
-Icon: https://chasedustevich.github.io/repo/CydiaIcon.png
+Icon: https://chasedustevich.github.io/repo/depictions/com.ryannair05.snoverlay/icon.png
+Header: https://chasedustevich.github.io/repo/depictions/com.ryannair05.snoverlay/banner.png
 
 Package: me.nepeta.axon
 Version: 1.6.0
@@ -76,4 +79,5 @@ Author: Nepeta & Baw Appie
 Name: Axon
 Depiction: https://chasedustevich.github.io/repo/depictions/?p=me.nepeta.axon
 SileoDepiction: https://chasedustevich.github.io/repo/depictions/me.nepeta.axon/sileo.json
-Icon: https://chasedustevich.github.io/repo/CydiaIcon.png
+Icon: https://chasedustevich.github.io/repo/depictions/me.nepeta.axon/icon.png
+Header: https://chasedustevich.github.io/repo/depictions/me.nepeta.axon/banner.png

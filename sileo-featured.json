@@ -4,25 +4,25 @@
   "itemCornerRadius": 10,
   "banners": [
     {
-      "url": "https://chasedustevich.github.io/repo/CydiaIcon.png",
+      "url": "https://chasedustevich.github.io/repo/depictions/com.midnightchips.asteroid/banner.png",
       "title": "Asteroid",
       "package": "com.midnightchips.asteroid",
       "hideShadow": false
     },
     {
-      "url": "https://chasedustevich.github.io/repo/CydiaIcon.png",
+      "url": "https://chasedustevich.github.io/repo/depictions/com.ryannair05.snoverlay/banner.png",
       "title": "Snoverlay 2",
       "package": "com.ryannair05.snoverlay",
       "hideShadow": false
     },
     {
-      "url": "https://chasedustevich.github.io/repo/CydiaIcon.png",
+      "url": "https://chasedustevich.github.io/repo/depictions/me.nepeta.axon/banner.png",
       "title": "Axon",
       "package": "me.nepeta.axon",
       "hideShadow": false
     },
     {
-      "url": "https://chasedustevich.github.io/repo/CydiaIcon.png",
+      "url": "https://chasedustevich.github.io/repo/depictions/com.brunonfl.s8edge/banner.png",
       "title": "S8Edge",
       "package": "com.brunonfl.s8edge",
       "hideShadow": false

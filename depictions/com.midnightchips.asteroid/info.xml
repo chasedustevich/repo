@@ -19,7 +19,28 @@
 		<description>Interactive modular Lock Screen weather components with drag-and-drop wiggle edit mode, greeting text, temperature, condition glyph, and native forecast platter.</description>
 		<description>Live updating Weather app icon, status bar weather glyph and temperature replacement, and default fallback city selection inside the Weather app.</description>
 	</descriptionlist>
-	<screenshots></screenshots>
+	<screenshots>
+		<screenshot>
+			<description>Lock Screen interactive forecast widget</description>
+			<image>StormyLockForecastPreview.JPG</image>
+		</screenshot>
+		<screenshot>
+			<description>Live Home Screen weather wallpaper and Weather app icon</description>
+			<image>Sunny.JPG</image>
+		</screenshot>
+		<screenshot>
+			<description>Rainy live weather animation on Home Screen</description>
+			<image>Rainy.JPG</image>
+		</screenshot>
+		<screenshot>
+			<description>Snowy live weather animation on Home Screen</description>
+			<image>Snowy.JPG</image>
+		</screenshot>
+		<screenshot>
+			<description>Cloudy live weather animation on Lock Screen</description>
+			<image>CloudyLock.JPG</image>
+		</screenshot>
+	</screenshots>
 	<changelog>
 		<change>Modernized for iOS 15-16+ rootless jailbreaks (iphoneos-arm64)</change>
 		<change>Native WeatherUI .caml Mica animated weather backgrounds</change>

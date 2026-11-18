@@ -1,7 +1,8 @@
 {
   "class": "DepictionTabView",
-  "minVersion": "0.1",
+  "minVersion": "0.4",
   "tintColor": "#5AC8FA",
+  "headerImage": "https://chasedustevich.github.io/repo/depictions/com.ryannair05.snoverlay/banner.png",
   "tabs": [
     {
       "class": "DepictionStackView",

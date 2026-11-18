@@ -1,7 +1,8 @@
 {
   "class": "DepictionTabView",
-  "minVersion": "0.1",
+  "minVersion": "0.4",
   "tintColor": "#5856D6",
+  "headerImage": "https://chasedustevich.github.io/repo/depictions/me.nepeta.axon/banner.png",
   "tabs": [
     {
       "class": "DepictionStackView",

@@ -1,7 +1,8 @@
 {
   "class": "DepictionTabView",
-  "minVersion": "0.1",
+  "minVersion": "0.4",
   "tintColor": "#0A84FF",
+  "headerImage": "https://chasedustevich.github.io/repo/depictions/com.midnightchips.asteroid/banner.png",
   "tabs": [
     {
       "class": "DepictionStackView",
@@ -16,6 +17,33 @@
         {
           "class": "DepictionMarkdownView",
           "markdown": "System-wide live weather for **iOS 15–16+ rootless** jailbreaks (Dopamine & Palera1n).\n\n### Features\n- **Animated Weather Wallpapers:** Live weather animations on the Home Screen and Lock Screen powered by Apple's native WeatherUI `.caml` Mica assets and sky gradients.\n- **Modular Lock Screen Widgets:** Interactive temperature, condition glyph, greeting, description, and forecast platter with drag-and-drop wiggle edit mode.\n- **Live Weather App Icon:** Real-time weather glyph, temperature, and live sky gradient directly on the Weather app icon.\n- **Status Bar & Default City:** Inline weather glyph/temperature in the status bar and default fallback city selection inside the native Weather app."
+        },
+        {
+          "class": "DepictionScreenshotsView",
+          "itemCornerRadius": 10.0,
+          "itemSize": "{160, 346}",
+          "screenshots": [
+            {
+              "url": "https://chasedustevich.github.io/repo/depictions/com.midnightchips.asteroid/screenshots/StormyLockForecastPreview.JPG",
+              "accessibilityText": "Lock Screen interactive forecast widget"
+            },
+            {
+              "url": "https://chasedustevich.github.io/repo/depictions/com.midnightchips.asteroid/screenshots/Sunny.JPG",
+              "accessibilityText": "Live Home Screen weather wallpaper and Weather app icon"
+            },
+            {
+              "url": "https://chasedustevich.github.io/repo/depictions/com.midnightchips.asteroid/screenshots/Rainy.JPG",
+              "accessibilityText": "Rainy live weather animation on Home Screen"
+            },
+            {
+              "url": "https://chasedustevich.github.io/repo/depictions/com.midnightchips.asteroid/screenshots/Snowy.JPG",
+              "accessibilityText": "Snowy live weather animation on Home Screen"
+            },
+            {
+              "url": "https://chasedustevich.github.io/repo/depictions/com.midnightchips.asteroid/screenshots/CloudyLock.JPG",
+              "accessibilityText": "Cloudy live weather animation on Lock Screen"
+            }
+          ]
         },
         {
           "class": "DepictionSeparatorView"
