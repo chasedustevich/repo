@@ -1,14 +1,14 @@
 Package: com.brunonfl.s8edge
-Version: 1.3.1
+Version: 1.3.0
 Architecture: iphoneos-arm64
 Maintainer: Bruno Andrade <brubiluco@globo.com>
 Installed-Size: 1416
 Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
-Filename: ./debs/com.brunonfl.s8edge_1.3.1_iphoneos-arm64.deb
-Size: 572682
-MD5sum: 0c5efc1b0bedc5ee6042d2ce44e365a7
-SHA1: b7539ecbe9bcb234b601b3489118e0cdae8dcca1
-SHA256: 09c9c413f6f5c6c8e5d664a88cb88992e6aadb8425d404329bd55f04ba600794
+Filename: ./debs/com.brunonfl.s8edge_1.3.0_iphoneos-arm64.deb
+Size: 572696
+MD5sum: 322b03854d8ee3508ddb95471fb9a813
+SHA1: 910734585c8290885ca96ef44a637a445a9b601c
+SHA256: 89edef16492ed9ee21f63a8aede4d8abfe31668fd50cef52f8e7b876d6468a30
 Section: Tweaks
 Description: Brings Galaxy S8 Infinity to iOS (rootless, iOS 15+)
 Author: Bruno Andrade <brubiluco@globo.com>
@@ -38,18 +38,18 @@ SileoDepiction: https://chasedustevich.github.io/repo/depictions/com.midnightchi
 Icon: https://chasedustevich.github.io/repo/CydiaIcon.png
 
 Package: com.ryannair05.snoverlay
-Version: 1.1.1
+Version: 1.1.0
 Architecture: iphoneos-arm64
 Maintainer: Ryan Nair
 Installed-Size: 476
 Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
 Conflicts: com.leftyfl1p.snoverlay, com.chasedustevich.snoverlay
 Replaces: com.leftyfl1p.snoverlay, com.chasedustevich.snoverlay
-Filename: ./debs/com.ryannair05.snoverlay_1.1.1_iphoneos-arm64.deb
-Size: 102784
-MD5sum: 8bc0c5d74e3377a7fd04da2e457f7dcc
-SHA1: cf12c4a782c8e056b9591c5f1c90e3aa047c3af7
-SHA256: 2f1125037d0eb19a5f5002315b92fe129cabfa3192712a4d0ea564050a3d8bf6
+Filename: ./debs/com.ryannair05.snoverlay_1.1.0_iphoneos-arm64.deb
+Size: 102896
+MD5sum: bc9db10dfe9a4a8bf6a7c8c1a71bf95e
+SHA1: 6a0dc9d2f729a43b1c55745a775a830ae5d9f75c
+SHA256: 87d72c29d9e1f9b15f81716bb2515431204bf7d39f2a1559874727ce4f07970a
 Section: Tweaks
 Description: Falling Snowflakes on iOS (rootless, iOS 15+)
 Author: Ryan Nair
@@ -59,17 +59,17 @@ SileoDepiction: https://chasedustevich.github.io/repo/depictions/com.ryannair05.
 Icon: https://chasedustevich.github.io/repo/CydiaIcon.png
 
 Package: me.nepeta.axon
-Version: 1.5.1
+Version: 1.6.0
 Architecture: iphoneos-arm64
 Maintainer: Chase Dustevich
 Installed-Size: 644
 Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
 Conflicts: io.ominousness.stackxi, com.thomasfinch.priorityhub, com.ioscreatix.intelixbeta, com.ioscreatix.intelix, com.spiritoflogic.ncunify, com.spiritoflogic.unifyx, com.hidan.nclink10, org.coolstar.ventana-modern, org.coolstar.ventana, org.s1ris.spinxi
-Filename: ./debs/me.nepeta.axon_1.5.1_iphoneos-arm64.deb
-Size: 143354
-MD5sum: 292b1f128b3440d8650377fb24df7bfe
-SHA1: 03689f443441af362537bdee520762e131e810ac
-SHA256: d444d40a945f11eddbaf2e11613fab3b8012d02cd3dabcf4ac9e1408b3209e91
+Filename: ./debs/me.nepeta.axon_1.6.0_iphoneos-arm64.deb
+Size: 143530
+MD5sum: 664d7a95d9bb754fc76ae4302a49690d
+SHA1: bccc9c6a8be3eede682edc3dc578b9d884bf3ed7
+SHA256: 5c2400d2e3b561846afaf956df10508e4e6fc3b4b50c39ab48b0a66e94f33837
 Section: Tweaks
 Description: Priority Hub for iOS 15-16+ (rootless)
 Author: Nepeta & Baw Appie

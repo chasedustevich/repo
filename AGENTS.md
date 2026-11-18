@@ -38,11 +38,11 @@ This repository is a static **iOS jailbreak APT repository** served via GitHub P
      - Injects `Depiction: https://chasedustevich.github.io/repo/depictions/?p=<Package>` whenever `depictions/<Package>/info.xml` exists and `Depiction:` is absent.
      - Injects `SileoDepiction: https://chasedustevich.github.io/repo/depictions/<Package>/sileo.json` whenever `depictions/<Package>/sileo.json` exists and `SileoDepiction:` is absent.
      - Injects `Icon: https://chasedustevich.github.io/repo/CydiaIcon.png` when `Icon:` is empty or missing.
-     - Synchronizes `<version>` in `depictions/<Package>/info.xml` and the `"Version"` row in `depictions/<Package>/sileo.json` to match the highest `.deb` version in `debs/`.
+     - Synchronizes `<version>` in `depictions/<Package>/info.xml`, the first `<version>` in `depictions/<Package>/changelog.xml`, and both the `"Version"` `DepictionTableTextView` row and first `"Changelog"` tab `DepictionHeaderView` in `depictions/<Package>/sileo.json` to match the `.deb` version in `debs/`.
 
 3. **Sibling Workspace Sync (`./update-repo.sh --sync`):**
-   - Scans `../Asteroid/packages`, `../Snoverlay-2/packages`, `../axon-ios16-compatibility/packages`, and `../s8edge/packages` for release `iphoneos-arm64` `.deb` archives matching each expected `Package` ID (ignoring `+debug` builds and legacy `iphoneos-arm` packages).
-   - Uses `dpkg --compare-versions` (and SHA-256 + mtime comparison on equal versions) to copy newer builds into `debs/` and prune older duplicate `.deb` versions of the same package ID.
+   - Reads `Package` and `Version` from each sibling workspace's `control` file (`../Asteroid`, `../Snoverlay-2`, `../axon-ios16-compatibility`, `../s8edge`) and scans its `packages/` directory for release `iphoneos-arm64` `.deb` archives matching that `Package` (ignoring `+debug` builds and legacy `iphoneos-arm` packages).
+   - Selects the release `.deb` matching `control`'s `Version` (falling back to the highest version if no exact match), copies it into `debs/` whenever the staged version or SHA-256 differs, and prunes any other versions for that package in `debs/`.
 
 4. **Dual Depiction Architecture (Web XML + Native Sileo JSON):**
    - **Sileo Native (`sileo.json`):** Uses `DepictionTabView` with `Details` and `Changelog` `DepictionStackView` tabs, `DepictionHeaderView`, `DepictionMarkdownView`, `DepictionTableTextView`, and `DepictionTableButtonView`.
@@ -53,9 +53,9 @@ This repository is a static **iOS jailbreak APT repository** served via GitHub P
 | Name | Package ID | Version | Architecture | Depends | Source Workspace |
 |---|---|---|---|---|---|
 | **Asteroid** | `com.midnightchips.asteroid` | `4.0.0` | `iphoneos-arm64` | `firmware (>= 15.0), mobilesubstrate, preferenceloader` | `../Asteroid` |
-| **Snoverlay 2** | `com.ryannair05.snoverlay` | `1.1.1` | `iphoneos-arm64` | `mobilesubstrate, preferenceloader, firmware (>= 15.0)` | `../Snoverlay-2` |
-| **Axon** | `me.nepeta.axon` | `1.5.1` | `iphoneos-arm64` | `mobilesubstrate, preferenceloader, firmware (>= 15.0)` | `../axon-ios16-compatibility` |
-| **S8Edge** | `com.brunonfl.s8edge` | `1.3.1` | `iphoneos-arm64` | `mobilesubstrate, preferenceloader, firmware (>= 15.0)` | `../s8edge` |
+| **Snoverlay 2** | `com.ryannair05.snoverlay` | `1.1.0` | `iphoneos-arm64` | `mobilesubstrate, preferenceloader, firmware (>= 15.0)` | `../Snoverlay-2` |
+| **Axon** | `me.nepeta.axon` | `1.6.0` | `iphoneos-arm64` | `mobilesubstrate, preferenceloader, firmware (>= 15.0)` | `../axon-ios16-compatibility` |
+| **S8Edge** | `com.brunonfl.s8edge` | `1.3.0` | `iphoneos-arm64` | `mobilesubstrate, preferenceloader, firmware (>= 15.0)` | `../s8edge` |
 
 ## Adding / updating packages
 

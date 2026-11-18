@@ -15,7 +15,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "Falling snowflakes across iOS for **iOS 15–16+ rootless** jailbreaks (Dopamine & Palera1n).\n\n### Features\n- **Wallpaper or System-Wide:** Restrict snow to the Home/Lock Screen wallpaper (`SBFStaticWallpaperView`) and CarPlay, or float snowflakes across every app via a touch-passthrough overlay window.\n- **iOS 16+ Scene Support:** Properly attaches `SnoverlaySecureWindow` to the active `SBWindowScene`.\n- **Two Rendering Engines:** Choose between the battery-friendly `CAEmitterLayer` particle engine or High Quality 3D `CABasicAnimation` mode, with white or blue snowflakes.\n- **Live Updates:** Settings changes apply immediately via Darwin notifications with no respring needed."
+          "markdown": "Falling snowflakes across iOS for **iOS 15\u201316+ rootless** jailbreaks (Dopamine & Palera1n).\n\n### Features\n- **Wallpaper or System-Wide:** Restrict snow to the Home/Lock Screen wallpaper (`SBFStaticWallpaperView`) and CarPlay, or float snowflakes across every app via a touch-passthrough overlay window.\n- **iOS 16+ Scene Support:** Properly attaches `SnoverlaySecureWindow` to the active `SBWindowScene`.\n- **Two Rendering Engines:** Choose between the battery-friendly `CAEmitterLayer` particle engine or High Quality 3D `CABasicAnimation` mode, with white or blue snowflakes.\n- **Live Updates:** Settings changes apply immediately via Darwin notifications with no respring needed."
         },
         {
           "class": "DepictionSeparatorView"
@@ -29,7 +29,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "1.1.1"
+          "text": "1.1.0"
         },
         {
           "class": "DepictionTableTextView",
@@ -59,13 +59,13 @@
       "views": [
         {
           "class": "DepictionHeaderView",
-          "title": "1.1.1",
+          "title": "1.1.0",
           "useBoldText": true,
           "useBottomMargin": false
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- Modernized for iOS 15–16+ rootless jailbreaks (`iphoneos-arm64`).\n- Attached `SnoverlaySecureWindow` to `SBWindowScene` for iOS 16+ compatibility with full touch passthrough.\n- Enabled live preference updates via Darwin notifications and rootless asset resolution."
+          "markdown": "- Modernized for iOS 15\u201316+ rootless jailbreaks (`iphoneos-arm64`).\n- Attached `SnoverlaySecureWindow` to `SBWindowScene` for iOS 16+ compatibility with full touch passthrough.\n- Enabled live preference updates via Darwin notifications and rootless asset resolution."
         }
       ]
     }

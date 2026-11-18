@@ -61,11 +61,24 @@ parent_dir = os.path.dirname(repo_dir)
 debs_dir = os.path.join(repo_dir, "debs")
 
 sources = [
-    ("com.midnightchips.asteroid", os.path.join(parent_dir, "Asteroid", "packages")),
-    ("com.ryannair05.snoverlay", os.path.join(parent_dir, "Snoverlay-2", "packages")),
-    ("me.nepeta.axon", os.path.join(parent_dir, "axon-ios16-compatibility", "packages")),
-    ("com.brunonfl.s8edge", os.path.join(parent_dir, "s8edge", "packages")),
+    ("com.midnightchips.asteroid", os.path.join(parent_dir, "Asteroid")),
+    ("com.ryannair05.snoverlay", os.path.join(parent_dir, "Snoverlay-2")),
+    ("me.nepeta.axon", os.path.join(parent_dir, "axon-ios16-compatibility")),
+    ("com.brunonfl.s8edge", os.path.join(parent_dir, "s8edge")),
 ]
+
+
+def read_control_meta(control_path):
+    meta = {}
+    if not os.path.isfile(control_path):
+        return "", ""
+    with open(control_path, "r", encoding="utf-8", errors="replace") as f:
+        for line in f:
+            line = line.strip()
+            if ":" in line:
+                k, v = line.split(":", 1)
+                meta[k.strip()] = v.strip()
+    return meta.get("Package", ""), meta.get("Version", "")
 
 
 def read_deb_meta(path):
@@ -112,11 +125,15 @@ for fname in sorted(os.listdir(debs_dir)):
         continue
     existing_by_pkg.setdefault((pkg, arch), []).append((ver, os.path.getmtime(fpath), fpath))
 
-# Sync latest release iphoneos-arm64 package from each sibling workspace
-for expected_pkg, src_dir in sources:
+# Sync release iphoneos-arm64 package matching control Version from each sibling workspace
+for fallback_pkg, ws_dir in sources:
+    src_dir = os.path.join(ws_dir, "packages")
     if not os.path.isdir(src_dir):
         print(f"[sync] Skipping missing directory: {src_dir}")
         continue
+
+    ctrl_pkg, ctrl_ver = read_control_meta(os.path.join(ws_dir, "control"))
+    expected_pkg = ctrl_pkg or fallback_pkg
 
     candidates = []
     for fname in sorted(os.listdir(src_dir)):
@@ -134,42 +151,41 @@ for expected_pkg, src_dir in sources:
         print(f"[sync] No release iphoneos-arm64 .deb found for {expected_pkg} in {src_dir}")
         continue
 
-    # Pick highest version (tie-break by newest mtime)
-    best = candidates[0]
-    for cand in candidates[1:]:
-        c = cmp_ver(cand[0], best[0])
-        if c > 0 or (c == 0 and cand[1] > best[1]):
-            best = cand
+    # Prefer candidate matching workspace control Version; otherwise pick highest version
+    exact = [c for c in candidates if ctrl_ver and c[0] == ctrl_ver]
+    if exact:
+        best = max(exact, key=lambda c: c[1])
+    else:
+        best = candidates[0]
+        for cand in candidates[1:]:
+            c = cmp_ver(cand[0], best[0])
+            if c > 0 or (c == 0 and cand[1] > best[1]):
+                best = cand
 
     cand_ver, cand_mtime, cand_path = best
     key = (expected_pkg, "iphoneos-arm64")
     current_list = existing_by_pkg.get(key, [])
 
     should_copy = False
-    if not current_list:
+    if len(current_list) != 1:
         should_copy = True
     else:
-        cur_best = current_list[0]
-        for cur in current_list[1:]:
-            c = cmp_ver(cur[0], cur_best[0])
-            if c > 0 or (c == 0 and cur[1] > cur_best[1]):
-                cur_best = cur
-        c = cmp_ver(cand_ver, cur_best[0])
-        if c > 0:
+        cur_ver, _, cur_path = current_list[0]
+        if cur_ver != cand_ver or os.path.basename(cur_path) != os.path.basename(cand_path):
             should_copy = True
-        elif c == 0 and file_sha256(cand_path) != file_sha256(cur_best[2]) and cand_mtime > cur_best[1]:
+        elif file_sha256(cand_path) != file_sha256(cur_path):
             should_copy = True
 
     if should_copy:
         dest_name = os.path.basename(cand_path)
         dest_path = os.path.join(debs_dir, dest_name)
         shutil.copy2(cand_path, dest_path)
-        print(f"[sync] Copied {dest_name} ({cand_ver})")
-        # Remove older versions for this package+arch
+        print(f"[sync] Synced {dest_name} ({cand_ver})")
+        # Remove any other versions/files for this package+arch
         for _, _, old_path in current_list:
             if os.path.abspath(old_path) != os.path.abspath(dest_path) and os.path.exists(old_path):
                 os.remove(old_path)
-                print(f"[sync] Pruned older {os.path.basename(old_path)}")
+                print(f"[sync] Pruned {os.path.basename(old_path)}")
         existing_by_pkg[key] = [(cand_ver, os.path.getmtime(dest_path), dest_path)]
     else:
         print(f"[sync] Up to date: {expected_pkg} ({cand_ver})")
@@ -307,17 +323,43 @@ for pkg, ver in latest_versions.items():
                 f.write(new_xml)
             print(f"[depiction] Updated {pkg}/info.xml version -> {ver}")
 
+    changelog_xml = os.path.join(dep_dir, "changelog.xml")
+    if os.path.isfile(changelog_xml):
+        with open(changelog_xml, "r", encoding="utf-8") as f:
+            cl_text = f.read()
+        new_cl, count = re.subn(
+            r"(<version>)(.*?)(</version>)",
+            rf"\g<1>{ver}\g<3>",
+            cl_text,
+            count=1,
+        )
+        if count > 0 and new_cl != cl_text:
+            with open(changelog_xml, "w", encoding="utf-8") as f:
+                f.write(new_cl)
+            print(f"[depiction] Updated {pkg}/changelog.xml version -> {ver}")
+
     sileo_json = os.path.join(dep_dir, "sileo.json")
     if os.path.isfile(sileo_json):
         with open(sileo_json, "r", encoding="utf-8") as f:
             data = json.load(f)
         changed = False
         for tab in data.get("tabs", []):
+            is_changelog_tab = tab.get("tabname") == "Changelog"
+            updated_changelog_header = False
             for view in tab.get("views", []):
                 if view.get("class") == "DepictionTableTextView" and view.get("title") == "Version":
                     if view.get("text") != ver:
                         view["text"] = ver
                         changed = True
+                elif (
+                    is_changelog_tab
+                    and not updated_changelog_header
+                    and view.get("class") == "DepictionHeaderView"
+                ):
+                    if view.get("title") != ver:
+                        view["title"] = ver
+                        changed = True
+                    updated_changelog_header = True
         if changed:
             with open(sileo_json, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2)

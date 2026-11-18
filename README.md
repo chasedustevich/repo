@@ -15,9 +15,9 @@ Open one of the direct links below on your jailbroken device or add `https://cha
 | Package | Bundle ID | Version | Architecture | Source |
 |---|---|---|---|---|
 | **Asteroid** | `com.midnightchips.asteroid` | `4.0.0` | `iphoneos-arm64` | [chasedustevich/Asteroid](https://github.com/chasedustevich/Asteroid) |
-| **Snoverlay 2** | `com.ryannair05.snoverlay` | `1.1.1` | `iphoneos-arm64` | [chasedustevich/Snoverlay-2](https://github.com/chasedustevich/Snoverlay-2) |
-| **Axon** | `me.nepeta.axon` | `1.5.1` | `iphoneos-arm64` | [chasedustevich/axon-ios16-compatibility](https://github.com/chasedustevich/axon-ios16-compatibility) |
-| **S8Edge** | `com.brunonfl.s8edge` | `1.3.1` | `iphoneos-arm64` | [chasedustevich/s8edge](https://github.com/chasedustevich/s8edge) |
+| **Snoverlay 2** | `com.ryannair05.snoverlay` | `1.1.0` | `iphoneos-arm64` | [chasedustevich/Snoverlay-2](https://github.com/chasedustevich/Snoverlay-2) |
+| **Axon** | `me.nepeta.axon` | `1.6.0` | `iphoneos-arm64` | [chasedustevich/axon-ios16-compatibility](https://github.com/chasedustevich/axon-ios16-compatibility) |
+| **S8Edge** | `com.brunonfl.s8edge` | `1.3.0` | `iphoneos-arm64` | [chasedustevich/s8edge](https://github.com/chasedustevich/s8edge) |
 
 ## Updating Packages & Rebuilding Indices
 
